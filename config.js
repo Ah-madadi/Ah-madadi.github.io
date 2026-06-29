@@ -114,7 +114,7 @@ const CONFIG = {
     links: [
       {
         type: "email",
-        value: "ah.madadi@zohomail.com",
+        value: "ah.madadi@ut.ac.ir",
         href: "mailto:ah.madadi@ut.ac.ir",
       },
       {
