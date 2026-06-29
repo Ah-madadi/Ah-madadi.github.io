@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amir Hossein Hamadadi — Electrical Engineer</title>
+  <meta name="description" content="Electrical Engineering student at University of Tehran. Power Systems, Digital Design (Verilog/RISC-V), Control Systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #08090a; --bg-panel: #0f1011; --bg-surface: #191a1b; --bg-elevated: #28282c;
+      --text-primary: #f7f8f8; --text-secondary: #d0d6e0; --text-tertiary: #8a8f98; --text-muted: #62666d;
+      --accent: #5e6ad2; --accent-bright: #7170ff; --accent-hover: #828fff; --green: #10b981;
+      --border-subtle: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.08); --border-strong: #23252a;
+      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans); font-feature-settings: "cv01", "ss03";
+      background: var(--bg-deep); color: var(--text-secondary); line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    a { color: var(--accent-bright); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--accent-hover); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(8,9,10,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-tertiary); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--accent-hover); color: #fff !important; }
+
+    /* HERO */
+    .hero { padding: 100px 0 80px; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 9999px; border: 1px solid var(--border-strong); font-size: 12px; font-weight: 500; color: var(--text-tertiary); margin-bottom: 24px; }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 510; color: var(--text-primary); line-height: 1.05; letter-spacing: -1.4px; margin-bottom: 20px; }
+    .hero p { font-size: 18px; font-weight: 400; color: var(--text-tertiary); line-height: 1.6; max-width: 560px; margin: 0 auto 32px; letter-spacing: -0.16px; }
+    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: background 0.15s; display: inline-block; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; }
+    .btn-ghost { background: rgba(255,255,255,0.02); color: var(--text-secondary); padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; transition: background 0.15s; display: inline-block; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.05); }
+
+    /* SECTIONS */
+    section { padding: 80px 0; }
+    .section-label { font-size: 12px; font-weight: 500; color: var(--accent-bright); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .section-title { font-size: 32px; font-weight: 400; color: var(--text-primary); line-height: 1.13; letter-spacing: -0.7px; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; color: var(--text-tertiary); max-width: 600px; margin-bottom: 48px; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .skill-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 24px; transition: background 0.15s, border-color 0.15s; }
+    .skill-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+    .skill-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(94,106,210,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 18px; }
+    .skill-card h3 { font-size: 15px; font-weight: 590; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.2px; }
+    .skill-card p { font-size: 14px; color: var(--text-tertiary); line-height: 1.5; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .skill-tag { font-size: 11px; font-weight: 500; color: var(--text-muted); padding: 2px 8px; border-radius: 2px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05); }
+
+    /* PROJECTS */
+    .project-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 20px; transition: background 0.15s, border-color 0.15s; }
+    .project-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+    .project-card h3 { font-size: 20px; font-weight: 590; color: var(--text-primary); letter-spacing: -0.24px; }
+    .project-status { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 9999px; white-space: nowrap; }
+    .status-done { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.2); }
+    .status-ongoing { background: rgba(94,106,210,0.1); color: var(--accent-bright); border: 1px solid rgba(94,106,210,0.2); }
+    .project-card > p { font-size: 15px; color: var(--text-tertiary); line-height: 1.6; margin-bottom: 16px; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+    .project-tech span { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); padding: 3px 10px; border-radius: 4px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); }
+    .project-link { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; color: var(--accent-bright); margin-top: 16px; }
+    .project-link:hover { color: var(--accent-hover); }
+    .project-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* EDUCATION */
+    .edu-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; }
+    .edu-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(94,106,210,0.08); border: 1px solid rgba(94,106,210,0.15); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .edu-card h3 { font-size: 16px; font-weight: 590; color: var(--text-primary); margin-bottom: 4px; }
+    .edu-card .edu-sub { font-size: 14px; color: var(--text-tertiary); }
+    .edu-card .edu-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .contact-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: flex; align-items: center; gap: 14px; transition: background 0.15s, border-color 0.15s; }
+    .contact-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+    .contact-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 18px; height: 18px; fill: var(--text-tertiary); }
+    .contact-card .contact-label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .contact-card .contact-value { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-top: 2px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border-subtle); padding: 32px 0; text-align: center; }
+    footer p { font-size: 13px; color: var(--text-muted); }
+    .divider { height: 1px; background: var(--border-subtle); margin: 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { padding: 64px 0 48px; }
+      .hero h1 { letter-spacing: -0.8px; }
+      section { padding: 56px 0; }
+      .nav-links { display: none; }
+      .project-header { flex-direction: column; }
+    }
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero, .skill-card, .project-card, .edu-card, .contact-card {
+        opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards;
+      }
+      .skill-card:nth-child(1) { animation-delay: 0.05s; }
+      .skill-card:nth-child(2) { animation-delay: 0.1s; }
+      .skill-card:nth-child(3) { animation-delay: 0.15s; }
+      .skill-card:nth-child(4) { animation-delay: 0.2s; }
+      .project-card:nth-child(1) { animation-delay: 0.05s; }
+      .project-card:nth-child(2) { animation-delay: 0.1s; }
+      .project-card:nth-child(3) { animation-delay: 0.15s; }
+      @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="nav-logo" id="nav-logo"></span>
+      <div class="nav-links" id="nav-links"></div>
+      <a id="nav-cta" class="nav-cta"></a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge"><span class="dot"></span> <span id="hero-badge"></span></div>
+      <h1 id="hero-name"></h1>
+      <p id="hero-tagline"></p>
+      <div class="hero-buttons" id="hero-buttons"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-label" id="skills-label"></div>
+      <h2 class="section-title" id="skills-title"></h2>
+      <p class="section-desc" id="skills-desc"></p>
+      <div class="skills-grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-label" id="projects-label"></div>
+      <h2 class="section-title" id="projects-title"></h2>
+      <p class="section-desc" id="projects-desc"></p>
+      <div id="projects-list"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-label" id="edu-label"></div>
+      <h2 class="section-title" id="edu-title"></h2>
+      <p class="section-desc" id="edu-desc" style="margin-bottom:32px"></p>
+      <div id="edu-list"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-label" id="contact-label"></div>
+      <h2 class="section-title" id="contact-title"></h2>
+      <p class="section-desc" id="contact-desc"></p>
+      <div class="contact-grid" id="contact-grid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p id="footer-text"></p>
+    </div>
+  </footer>
+
+  <!-- Load config and render -->
+  <script src="config.js"></script>
+  <script>
+    const EXTERNAL_SVG = `<svg viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 010 1.5h-3.5a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25v-3.5a.75.75 0 011.5 0v3.5A1.75 1.75 0 0112.25 14h-8.5A1.75 1.75 0 012 12.25v-8.5C2 2.784 2.784 2 3.75 2zm6.854-1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.751.751 0 01-1.042-.018.751.751 0 01-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1z"/></svg>`;
+
+    const ICONS = {
+      email: `<svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>`,
+      github: `<svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>`,
+      linkedin: `<svg viewBox="0 0 20 20"><path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm1.336 9.763H3.67V7.775h2.671v8.563zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/></svg>`,
+    };
+
+    function render() {
+      const C = CONFIG;
+
+      // Nav
+      document.getElementById('nav-logo').textContent = C.nav.logo;
+      document.getElementById('nav-links').innerHTML = C.nav.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('');
+      const cta = document.getElementById('nav-cta');
+      cta.textContent = C.nav.cta;
+      cta.href = C.nav.ctaLink;
+
+      // Hero
+      document.getElementById('hero-badge').textContent = C.hero.badge;
+      document.getElementById('hero-name').textContent = C.hero.name;
+      document.getElementById('hero-tagline').textContent = C.hero.tagline;
+      document.getElementById('hero-buttons').innerHTML = C.hero.buttons.map(b =>
+        `<a href="${b.href}" class="btn-${b.style}">${b.label}</a>`
+      ).join('');
+
+      // Title
+      document.title = C.hero.name + ' — Electrical Engineer';
+
+      // Skills
+      document.getElementById('skills-label').textContent = C.skills.label;
+      document.getElementById('skills-title').textContent = C.skills.title;
+      document.getElementById('skills-desc').textContent = C.skills.description;
+      document.getElementById('skills-grid').innerHTML = C.skills.items.map(s => `
+        <div class="skill-card">
+          <div class="skill-icon">${s.icon}</div>
+          <h3>${s.title}</h3>
+          <p>${s.desc}</p>
+          <div class="skill-tags">${s.tags.map(t => `<span class="skill-tag">${t}</span>`).join('')}</div>
+        </div>
+      `).join('');
+
+      // Projects
+      document.getElementById('projects-label').textContent = C.projects.label;
+      document.getElementById('projects-title').textContent = C.projects.title;
+      document.getElementById('projects-desc').textContent = C.projects.description;
+      document.getElementById('projects-list').innerHTML = C.projects.items.map(p => `
+        <div class="project-card">
+          <div class="project-header">
+            <h3>${p.title}</h3>
+            <span class="project-status status-${p.status}">${p.status === 'done' ? 'Completed' : 'In Progress'}</span>
+          </div>
+          <p>${p.desc}</p>
+          <div class="project-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+          ${p.link ? `<a href="${p.link.url}" class="project-link" target="_blank">${p.link.label} ${EXTERNAL_SVG}</a>` : ''}
+        </div>
+      `).join('');
+
+      // Education
+      document.getElementById('edu-label').textContent = C.education.label;
+      document.getElementById('edu-title').textContent = C.education.title;
+      document.getElementById('edu-desc').textContent = C.education.description;
+      document.getElementById('edu-list').innerHTML = C.education.items.map(e => `
+        <div class="edu-card">
+          <div class="edu-icon">${e.icon}</div>
+          <div>
+            <h3>${e.school}</h3>
+            <div class="edu-sub">${e.degree}</div>
+            <div class="edu-date">${e.date}</div>
+          </div>
+        </div>
+      `).join('');
+
+      // Contact
+      document.getElementById('contact-label').textContent = C.contact.label;
+      document.getElementById('contact-title').textContent = C.contact.title;
+      document.getElementById('contact-desc').textContent = C.contact.description;
+      document.getElementById('contact-grid').innerHTML = C.contact.links.map(c => `
+        <a href="${c.href}" class="contact-card" ${c.type !== 'email' ? 'target="_blank"' : ''}>
+          <div class="contact-icon">${ICONS[c.type] || ''}</div>
+          <div>
+            <div class="contact-label">${c.type}</div>
+            <div class="contact-value">${c.value}</div>
+          </div>
+        </a>
+      `).join('');
+
+      // Footer
+      document.getElementById('footer-text').textContent = C.footer;
+    }
+
+    render();
+  </script>
+</body>
+</html>
