@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amir Hossein Madadi — Electrical Engineer</title>
+  <meta name="description" content="Electrical Engineering student at the University of Tehran designing power grids, electrical machines, RISC-V microprocessors, and control architectures — from transistor-level hardware to grid-scale systems.">
+  <meta property="og:title" content="Amir Hossein Madadi — Electrical Engineer">
+  <meta property="og:description" content="Electrical Engineering student at the University of Tehran designing power grids, electrical machines, RISC-V microprocessors, and control architectures — from transistor-level hardware to grid-scale systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ah-madadi.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Amir Hossein Madadi — Electrical Engineer">
+  <meta name="twitter:description" content="Electrical Engineering student at the University of Tehran designing power grids, electrical machines, RISC-V microprocessors, and control architectures — from transistor-level hardware to grid-scale systems.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2308090a'/%3E%3Ctext x='50' y='67' font-size='58' text-anchor='middle' fill='%235e6ad2'%3EAH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-deep: #08090a; --bg-panel: #0f1011; --bg-surface: #191a1b; --bg-elevated: #28282c;
+      --text-primary: #f7f8f8; --text-secondary: #d0d6e0; --text-tertiary: #8a8f98; --text-muted: #62666d;
+      --accent: #5e6ad2; --accent-bright: #7170ff; --accent-hover: #828fff; --green: #10b981;
+      --border-subtle: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.08); --border-strong: #23252a;
+      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans); font-feature-settings: "cv01", "ss03";
+      background: var(--bg-deep); color: var(--text-secondary); line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    a { color: var(--accent-bright); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--accent-hover); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(8,9,10,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-subtle); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .nav-logo { font-size: 15px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-tertiary); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--accent-hover); color: #fff !important; }
+
+    /* HERO */
+    .hero { padding: 100px 0 80px; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 9999px; border: 1px solid var(--border-strong); font-size: 12px; font-weight: 500; color: var(--text-tertiary); margin-bottom: 24px; }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 510; color: var(--text-primary); line-height: 1.05; letter-spacing: -1.4px; margin-bottom: 20px; }
+    .hero p { font-size: 18px; font-weight: 400; color: var(--text-tertiary); line-height: 1.6; max-width: 560px; margin: 0 auto 32px; letter-spacing: -0.16px; }
+    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: background 0.15s; display: inline-block; }
+    .btn-primary:hover { background: var(--accent-hover); color: #fff; }
+    .btn-ghost { background: rgba(255,255,255,0.02); color: var(--text-secondary); padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; border: 1px solid rgba(255,255,255,0.08); cursor: pointer; transition: background 0.15s; display: inline-block; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.05); }
+
+    /* SECTIONS */
+    section { padding: 80px 0; }
+    .section-label { font-size: 12px; font-weight: 500; color: var(--accent-bright); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .section-title { font-size: 32px; font-weight: 400; color: var(--text-primary); line-height: 1.13; letter-spacing: -0.7px; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; color: var(--text-tertiary); max-width: 600px; margin-bottom: 48px; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 24px; transition: background 0.15s, border-color 0.15s; }
+    .skill-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+    .skill-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(94,106,210,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 18px; }
+    .skill-card h3 { font-size: 15px; font-weight: 590; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.2px; }
+    .skill-card p { font-size: 14px; color: var(--text-tertiary); line-height: 1.5; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .skill-tag { font-size: 11px; font-weight: 500; color: var(--text-muted); padding: 2px 8px; border-radius: 2px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05); }
+
+    
+    /* FILTERS & FEATURED */
+    .filter-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .filter-btn { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 99px; padding: 6px 14px; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover { background: rgba(255,255,255,0.08); }
+    .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .project-featured { border-color: rgba(94,106,210,0.3); background: rgba(94,106,210,0.02); }
+    .project-badge { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(94,106,210,0.15); color: var(--accent-bright); padding: 3px 8px; border-radius: 4px; }
+
+    /* PROJECTS */
+    .project-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 20px; transition: background 0.15s, border-color 0.15s; }
+    .project-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+    .project-card h3 { font-size: 20px; font-weight: 590; color: var(--text-primary); letter-spacing: -0.24px; }
+    .project-status { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 9999px; white-space: nowrap; }
+    .status-done { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.2); }
+    .status-ongoing { background: rgba(94,106,210,0.1); color: var(--accent-bright); border: 1px solid rgba(94,106,210,0.2); }
+    .project-card > p { font-size: 15px; color: var(--text-tertiary); line-height: 1.6; margin-bottom: 16px; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+    .project-tech span { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); padding: 3px 10px; border-radius: 4px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); }
+    .project-link { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; color: var(--accent-bright); margin-top: 16px; }
+    .project-link:hover { color: var(--accent-hover); }
+    .project-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* EDUCATION */
+    .edu-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; }
+    .edu-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(94,106,210,0.08); border: 1px solid rgba(94,106,210,0.15); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .edu-card h3 { font-size: 16px; font-weight: 590; color: var(--text-primary); margin-bottom: 4px; }
+    .edu-card .edu-sub { font-size: 14px; color: var(--text-tertiary); }
+    .edu-card .edu-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .contact-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: flex; align-items: center; gap: 14px; transition: background 0.15s, border-color 0.15s; min-width: 0; overflow: hidden; }
+    .contact-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+    .contact-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 18px; height: 18px; fill: var(--text-tertiary); }
+    .contact-card .contact-label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .contact-card .contact-value { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-top: 2px; overflow-wrap: anywhere; word-break: break-all; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border-subtle); padding: 32px 0; text-align: center; }
+    footer p { font-size: 13px; color: var(--text-muted); }
+    .divider { height: 1px; background: var(--border-subtle); margin: 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { padding: 64px 0 48px; }
+      .hero h1 { letter-spacing: -0.8px; }
+      section { padding: 56px 0; }
+      .nav-links { display: none; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-card { padding: 24px; }
+      .project-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .project-card h3 { font-size: 17px; }
+      .section-title { font-size: 26px; }
+      .filter-group { gap: 6px; }
+      .filter-btn { padding: 5px 12px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero p { font-size: 16px; }
+      .project-card { padding: 20px; }
+      .project-tech span { font-size: 11px; padding: 2px 8px; }
+    }
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero, .skill-card, .project-card, .edu-card, .contact-card {
+        opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards;
+      }
+      .skill-card:nth-child(1) { animation-delay: 0.05s; }
+      .skill-card:nth-child(2) { animation-delay: 0.1s; }
+      .skill-card:nth-child(3) { animation-delay: 0.15s; }
+      .skill-card:nth-child(4) { animation-delay: 0.2s; }
+      .project-card:nth-child(1) { animation-delay: 0.05s; }
+      .project-card:nth-child(2) { animation-delay: 0.1s; }
+      .project-card:nth-child(3) { animation-delay: 0.15s; }
+      @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="nav-logo" id="nav-logo">Ah.madadi</span>
+      <div class="nav-links" id="nav-links"><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+      <a id="nav-cta" class="nav-cta" href="mailto:ah.madadi@ut.ac.ir">Get in touch</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge"><span class="dot"></span> <span id="hero-badge">Electrical Engineering · Power · Digital Systems</span></div>
+      <h1 id="hero-name">Amir Hossein Madadi</h1>
+      <p id="hero-tagline">Electrical Engineering student at the University of Tehran. I design and simulate power grids, electrical machines, RISC-V microprocessors, and control architectures — from transistor-level hardware to grid-scale systems.</p>
+      <div class="hero-buttons" id="hero-buttons"><a href="#projects" class="btn-primary">View Projects</a><a href="#contact" class="btn-ghost">Contact Me</a></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-label" id="skills-label">Expertise</div>
+      <h2 class="section-title" id="skills-title">Cross-domain electrical engineering toolkit</h2>
+      <p class="section-desc" id="skills-desc">A portfolio spanning grid-scale power studies, machine simulation, high-voltage fields, RTL processor design, applied engineering instrumentation, controls, and computational engineering.</p>
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+          <h3>Power Systems &amp; Grid Analysis</h3>
+          <p>Load flow, short-circuit analysis, contingency studies, and grid-scale power system simulation.</p>
+          <div class="skill-tags"><span class="skill-tag">DIgSILENT PowerFactory</span><span class="skill-tag">PowerWorld</span><span class="skill-tag">MATLAB/Simulink</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg></div>
+          <h3>Digital Logic &amp; Processor Design</h3>
+          <p>RTL architecture, pipelined RISC-V/MIPS processors, sequential systems, and FPGA synthesis.</p>
+          <div class="skill-tags"><span class="skill-tag">Verilog</span><span class="skill-tag">Quartus Prime</span><span class="skill-tag">ModelSim</span><span class="skill-tag">RISC-V</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-1.1 1.8-2 4-2s4 .9 4 2-1.8 2-4 2-4-.9-4-2z"></path><path d="M12 12c0-1.1 1.8-2 4-2s4 .9 4 2-1.8 2-4 2-4-.9-4-2z"></path><line x1="1" y1="12" x2="4" y2="12"></line><line x1="16" y1="12" x2="20" y2="12"></line></svg></div>
+          <h3>Electrical Machines &amp; Transformer Design</h3>
+          <p>FEM-based motor/transformer modeling, equivalent-circuit analysis, and electromagnetic field simulation.</p>
+          <div class="skill-tags"><span class="skill-tag">Ansys Maxwell</span><span class="skill-tag">Simcenter SPEED</span><span class="skill-tag">COMSOL</span><span class="skill-tag">RMxprt</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12A10 10 0 0 0 12 2v10z"></path><path d="M2 12A10 10 0 0 0 12 22v-10z"></path><path d="M12 2a10 10 0 0 1 10 10h-10z"></path><path d="M12 22a10 10 0 0 1-10-10h10z"></path></svg></div>
+          <h3>Control Systems &amp; Automation</h3>
+          <p>Motor control, linear dynamic systems, industrial process control, and PLC programming.</p>
+          <div class="skill-tags"><span class="skill-tag">MATLAB/Simulink</span><span class="skill-tag">Simscape</span><span class="skill-tag">Siemens PLC</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l2-4 3 8 3-8 3 8 2-4h4"></path></svg></div>
+          <h3>Circuits &amp; Electronics</h3>
+          <p>Analog/digital circuit simulation, transient analysis, high-voltage insulation, and PCB design.</p>
+          <div class="skill-tags"><span class="skill-tag">LTspice</span><span class="skill-tag">PSpice</span><span class="skill-tag">Multisim</span><span class="skill-tag">OrCAD Capture</span><span class="skill-tag">Altium Designer</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg></div>
+          <h3>Computational Engineering</h3>
+          <p>Algorithmic simulation, data processing, numerical methods, and embedded software development.</p>
+          <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C/C++</span><span class="skill-tag">MATLAB Live Scripts</span><span class="skill-tag">NumPy</span><span class="skill-tag">AutoCAD</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-label" id="projects-label">Work</div>
+      <h2 class="section-title" id="projects-title">Selected projects, simulations &amp; applied engineering work</h2>
+      <p class="section-desc" id="projects-desc">Representative work implemented in projects, analytical studys, simulations, and applied engineering archives at the University of Tehran.</p>
+      <div id="projects-filter-container">
+      <!-- START FILTERS -->
+        <div class="filter-group"><button class="filter-btn active" data-filter="All">All</button><button class="filter-btn" data-filter="Digital / RTL">Digital / RTL</button><button class="filter-btn" data-filter="Power &amp; Machines">Power &amp; Machines</button><button class="filter-btn" data-filter="Control &amp; Circuits">Control &amp; Circuits</button><button class="filter-btn" data-filter="Software &amp; Data">Software &amp; Data</button></div>
+      <!-- END FILTERS -->
+    </div>
+      <div id="projects-list">
+      <!-- START PROJECTS -->
+        <div class="project-card project-featured" data-category="Power &amp; Machines">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Power System Analysis — IEEE 39-Bus</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Load flow and short-circuit studies on the IEEE 39-Bus test network using DIgSILENT PowerFactory. Performed maximum loadability analysis, generator outage scenarios, voltage profiling, and N-1 contingency assessment. Compared Newton-Raphson and Fast Decoupled algorithms in MATLAB for convergence accuracy on large networks.</p>
+          <div class="project-tech"><span>DIgSILENT PowerFactory</span><span>MATLAB</span><span>IEEE 39-Bus</span><span>Load Flow</span><span>Short Circuit</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Power &amp; Machines">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Power System Analysis — 400kV/230kV Transmission Network</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Analyzed 400kV and 230kV transmission line parameters on tower configurations, performed load-flow studies, and assessed N-1 contingency criteria for grid reliability. Implemented Newton-Raphson, Fast Decoupled, and Gauss-Seidel algorithms in MATLAB Live Scripts for large-network convergence.</p>
+          <div class="project-tech"><span>MATLAB</span><span>Live Scripts</span><span>Transmission Line</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Power &amp; Machines">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Three-Phase Induction Motor Design — Ansys Maxwell-RMxprt</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Designed a 7.5kW/1452rpm/380V 4-pole induction motor in Ansys Maxwell-RMxprt. Specified stator/rotor geometry, slot dimensions, winding configuration, and performed electromagnetic performance characterization including torque-speed and efficiency curves.</p>
+          <div class="project-tech"><span>Ansys Maxwell</span><span>RMxprt</span><span>7.5kW</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Digital / RTL">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Pipelined, Multi-Cycle &amp; Single-Cycle RISC-V Processor Design</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Designed and verified RV32I-class RISC-V processor architectures in Verilog: single-cycle, multi-cycle, and 5-stage pipelined datapaths. Implemented ALU, register file, immediate generation, branch control, instruction/data memories, forwarding, hazard detection, and flush/control gating. Validated with custom assembly workloads including signed 32-bit array sorting.</p>
+          <div class="project-tech"><span>Verilog</span><span>ModelSim</span><span>Quartus</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Power &amp; Machines">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>High-Frequency Transformer Design &amp; Construction</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Designed and built a high-frequency transformer using EE55 ferrite core for 20kHz–several MHz range. Performed parameter calculations, selected litz wire for skin-effect mitigation, and validated performance through practical testing. Combined analytical design in Excel with hands-on construction.</p>
+          <div class="project-tech"><span>Ferrite Core EE55</span><span>Litz Wire</span><span>High Frequency</span><span>Excel</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Motor Speed Control &amp; DC Motor Design</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Implemented motor speed control strategies for DC shunt and induction motors using Simulink/Simscape with FOC. Designed and optimized a DC motor in Simcenter SPEED including geometric and electromagnetic parameter calculation. Compared dynamic responses between classical and modern control approaches.</p>
+          <div class="project-tech"><span>Simulink</span><span>Simscape</span><span>Simcenter SPEED</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>CSTR Process Control — Nonlinear Industrial System</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Modeled and controlled a Continuous Stirred Tank Reactor (CSTR) with irreversible exothermic A→B reaction. Implemented 3 coupled differential equations (mass balance, reactor energy, jacket energy) with parameters F=100 L/min, V=100L. Designed control loops for temperature and conversion regulation in Simulink.</p>
+          <div class="project-tech"><span>MATLAB</span><span>Simulink</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Digital / RTL">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>FPGA Function Generator (DDS) — Digital Synthesis</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Built a Direct Digital Synthesis function generator on FPGA generating sine, square, triangular, sawtooth, half-wave, and full-wave rectified waveforms. Implemented DAC with PWM, frequency/amplitude selector, and ROM-based waveform lookup. Includes Ring Oscillator, LM555 Timer, and Schmitt Trigger Oscillator implementations in LTspice before FPGA realization.</p>
+          <div class="project-tech"><span>Verilog</span><span>Quartus Prime</span><span>FPGA</span><span>PWM DAC</span><span>LTspice</span></div>
+          
+        </div>
+        <div class="project-card project-featured" data-category="Power &amp; Machines">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>High-Voltage Insulation &amp; Electric Field Simulation</h3>
+              <span class="project-badge">Featured</span>
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Analyzed 2D electric potential and field distribution in electrode/insulation geometries using FDM, Monte Carlo, and FEM. Studied traveling waves on 300Ω air lines (1500km/400km), damping behavior, and transient response. Combined MATLAB, COMSOL, and LTspice for multi-tool validation of insulation coordination.</p>
+          <div class="project-tech"><span>COMSOL</span><span>FDM</span><span>Monte Carlo</span><span>LTspice</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Digital / RTL">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>MIPS Single-Cycle, Pipeline &amp; Multi-Cycle Processors</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Designed three MIPS processor architectures in Verilog: single-cycle (ALU, register file, control unit, data memory), 5-stage pipeline with forwarding and hazard units, and multi-cycle implementation. Validated with array sorting and arithmetic test programs.</p>
+          <div class="project-tech"><span>Verilog</span><span>ModelSim</span><span>MIPS</span><span>Computer Architecture</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Digital / RTL">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>FPGA Digital Design — Radix-4 Multiplier &amp; Accelerators</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Implemented Radix-4 multiplier on FPGA with datapath/controller partitioning. Built Exponential Engine as SoC accelerator with wrapper controller in SystemVerilog. Includes clock generation, frequency dividers, Baud rate generator for UART, and T flip-flop based sequential systems.</p>
+          <div class="project-tech"><span>Verilog</span><span>SystemVerilog</span><span>Quartus Prime</span><span>FPGA</span><span>SoC Accelerator</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Digital / RTL">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Rat-in-Maze Hardware Solver &amp; Linear Regression Accelerator</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Designed hardware to solve 16×16 mazes using maze memory and solver modules. Built a linear regression hardware accelerator with data loader, coefficient calculator, and error checker using datapath/controller architecture. Implemented Booth multiplier for arithmetic operations.</p>
+          <div class="project-tech"><span>Verilog</span><span>ModelSim</span><span>Booth Multiplier</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Electronics Projects — Oscillators, Amplifiers &amp; Multi-Stage Design</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Built multi-waveform oscillators (square via Op-Amp → triangular integrator → half-wave triangle). Designed 3-stage transistor amplifier (CC + CE + CB) with PSPICE simulation and theoretical comparison. Performed differential amplifier analysis with CMRR, AC sweep, and Early voltage effects.</p>
+          <div class="project-tech"><span>LTspice</span><span>PSPICE</span><span>Multisim</span><span>Op-Amp</span><span>BJT Amplifier</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Circuit Labs — Oscilloscope, AC/DC Analysis &amp; Frequency Response</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>9 lab sessions covering oscilloscope fundamentals, digital multimeter use, resistive circuits (KVL/KCL), nonlinear circuits (diodes/transistors), Op-Amp circuits, first/second-order transient response, and frequency response with resonance and impedance matching.</p>
+          <div class="project-tech"><span>Oscilloscope</span><span>Multimeter</span><span>RLC Circuits</span><span>Frequency Response</span><span>Impedance Matching</span><span>Lab Equipment</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Linear Control Systems — Lab &amp; Dynamic Response</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Completed 6 control systems lab experiments in MATLAB/Simulink. Analyzed stability from pole locations, first/second-order transient responses, feedback behavior, root-locus and Bode-based interpretation, and compensator design for system optimization.</p>
+          <div class="project-tech"><span>MATLAB</span><span>Simulink</span><span>Root Locus</span><span>Bode</span><span>Feedback Control</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Software &amp; Data">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Signals &amp; Systems — Laplace, Fourier &amp; Convolution</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Implemented 7 computational assignments covering Laplace transforms, Fourier analysis, system response, convolution, and impulse response. Built custom implementations replacing built-in functions to demonstrate algorithmic understanding.</p>
+          <div class="project-tech"><span>MATLAB</span><span>Laplace Transform</span><span>Fourier Transform</span><span>Convolution</span><span>Signal Processing</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Software &amp; Data">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Engineering Statistics &amp; Probability</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Completed 5 projects: Bayes classifier (NumPy), distribution simulation, Bayesian estimation with correlation, Central Limit Theorem proof via moment-generating functions, and MLE parameter estimation. Topics include birthday paradox, coin games, and dataset analysis.</p>
+          <div class="project-tech"><span>Python</span><span>NumPy</span><span>Bayesian Statistics</span><span>CLT</span><span>MLE</span><span>Statistical Modeling</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Software &amp; Data">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>C Programming — Dual Snake Game &amp; University Reservation System</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Developed a competitive two-player Snake game with 2D arrays, pointers, and random functions. Built a university cafeteria reservation system evolving from dynamic arrays to linked lists. 8 lab sessions covering arrays, pointers, file I/O, and dynamic memory.</p>
+          <div class="project-tech"><span>C</span><span>Data Structures</span><span>Linked Lists</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Power &amp; Machines">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Electromagnetics — DC Motor Physical Modeling</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Modeled a single-loop DC motor from first principles: magnetic field, magnetic force, Faraday&#39;s law, and induced EMF. Implemented in MATLAB with 3-person team, combining analytical derivation with numerical simulation.</p>
+          <div class="project-tech"><span>MATLAB</span><span>Electromagnetics</span><span>Physical Simulation</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>Overvoltage Detection &amp; Three-Phase Unbalance</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>Designed an overvoltage detection circuit for AC networks and a three-phase unbalance detector (conductor break) in Multisim. Two-part project combining protection relay concepts with power quality analysis.</p>
+          <div class="project-tech"><span>Multisim</span><span>Power Quality</span><span>Overvoltage Protection</span><span>Three-Phase Systems</span></div>
+          
+        </div>
+        <div class="project-card" data-category="Control &amp; Circuits">
+          <div class="project-header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3>PCB Design &amp; General Workshop</h3>
+              
+            </div>
+            <span class="project-status status-done">Completed</span>
+          </div>
+          <p>11-week workshop covering resistor/capacitor fundamentals, oscilloscope and multimeter usage, and PCB design principles. Hands-on experience with Arduino-based prototyping and circuit construction.</p>
+          <div class="project-tech"><span>Arduino</span><span>PCB Design</span><span>Oscilloscope</span><span>Prototyping</span><span>Lab Equipment</span></div>
+          
+        </div>
+
+      <!-- END PROJECTS -->
+    
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-label" id="edu-label">Background</div>
+      <h2 class="section-title" id="edu-title">Education</h2>
+      <p class="section-desc" id="edu-desc" style="margin-bottom:32px">Academic foundation in electrical engineering with a focus on power engineering and strong hands-on work in digital systems, control, circuits, and simulation.</p>
+      <div id="edu-list">
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <h3>University of Tehran</h3>
+            <div class="edu-sub">B.Sc. in Electrical Engineering — Power Engineering</div>
+            <div class="edu-date">2021 — 2026 (Expected)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-label" id="contact-label">Connect</div>
+      <h2 class="section-title" id="contact-title">Let&#x27;s talk</h2>
+      <p class="section-desc" id="contact-desc">Open to internships, research collaborations, and engineering roles in power systems, digital hardware, simulation, and embedded/automation workflows.</p>
+      <div class="contact-grid" id="contact-grid">
+        <a href="mailto:ah.madadi@ut.ac.ir" class="contact-card">
+          <div class="contact-icon"><svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg></div>
+          <div>
+            <div class="contact-label">email</div>
+            <div class="contact-value">ah.madadi@ut.ac.ir</div>
+          </div>
+        </a>
+        <a href="https://github.com/Ah-madadi" class="contact-card" target="_blank">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
+          <div>
+            <div class="contact-label">github</div>
+            <div class="contact-value">Ah-madadi</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/Ah-madadi" class="contact-card" target="_blank">
+          <div class="contact-icon"><svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor"><path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm1.336 9.763H3.67V7.775h2.671v8.563zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/></svg></div>
+          <div>
+            <div class="contact-label">linkedin</div>
+            <div class="contact-value">Connect with me</div>
+          </div>
+        </a>
+        <a href="Resume_AmirHossein_Madadi.pdf" class="contact-card" target="_blank">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+          <div>
+            <div class="contact-label">resume</div>
+            <div class="contact-value">Download CV (FA)</div>
+          </div>
+        </a>
+        <a href="Resume_AmirHossein_Madadi_EN.pdf" class="contact-card" target="_blank">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+          <div>
+            <div class="contact-label">resume</div>
+            <div class="contact-value">Download CV (EN)</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p id="footer-text">Built with care · © 2026 Amir Hossein Madadi</p>
+    </div>
+  </footer>
+
+  <!-- Load config and render -->
+  <script src="config.js"></script>
+  <script>
+    const EXTERNAL_SVG = `<svg viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 010 1.5h-3.5a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25v-3.5a.75.75 0 011.5 0v3.5A1.75 1.75 0 0112.25 14h-8.5A1.75 1.75 0 012 12.25v-8.5C2 2.784 2.784 2 3.75 2zm6.854-1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.751.751 0 01-1.042-.018.751.751 0 01-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1z"/></svg>`;
+
+    const ICONS = {
+      email: `<svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>`,
+      github: `<svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>`,
+      linkedin: `<svg viewBox="0 0 20 20"><path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm1.336 9.763H3.67V7.775h2.671v8.563zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/></svg>`,
+    };
+
+                                                                                                                            function render() {
+      const C = CONFIG;
+      document.getElementById('nav-logo').textContent = C.nav.logo;
+      document.getElementById('nav-links').innerHTML = C.nav.links.map(l => `<a href="${l.href}">${l.label}</a>`).join('');
+      const cta = document.getElementById('nav-cta');
+      cta.textContent = C.nav.cta;
+      cta.href = C.nav.ctaLink;
+      document.getElementById('hero-badge').textContent = C.hero.badge;
+      document.getElementById('hero-name').textContent = C.hero.name;
+      document.getElementById('hero-tagline').textContent = C.hero.tagline;
+      document.getElementById('hero-buttons').innerHTML = C.hero.buttons.map(b =>
+        `<a href="${b.href}" class="btn-${b.style}">${b.label}</a>`
+      ).join('');
+      document.title = C.hero.name + ' — Electrical Engineer';
+      document.getElementById('skills-label').textContent = C.skills.label;
+      document.getElementById('skills-title').textContent = C.skills.title;
+      document.getElementById('skills-desc').textContent = C.skills.description;
+      document.getElementById('projects-label').textContent = C.projects.label;
+      document.getElementById('projects-title').textContent = C.projects.title;
+      document.getElementById('projects-desc').textContent = C.projects.description;
+      document.getElementById('edu-label').textContent = C.education.label;
+      document.getElementById('edu-title').textContent = C.education.title;
+      document.getElementById('edu-desc').textContent = C.education.description;
+      document.getElementById('contact-label').textContent = C.contact.label;
+      document.getElementById('contact-title').textContent = C.contact.title;
+      document.getElementById('contact-desc').textContent = C.contact.description;
+      document.getElementById('footer-text').textContent = C.footer;
+    }
+
+    render();
+
+    // Filter logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-card');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'All' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+  </script>
+</body>
+</html>
