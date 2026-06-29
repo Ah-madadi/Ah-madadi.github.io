@@ -8,7 +8,7 @@ const CONFIG = {
   nav: {
     logo: "Ah.madadi",
     cta: "Get in touch",
-    ctaLink: "mailto:ah.madadi@zohomail.com",
+    ctaLink: "mailto:ah.madadi@ut.ac.ir",
     links: [
       { label: "Skills",     href: "#skills" },
       { label: "Projects",   href: "#projects" },
@@ -115,7 +115,7 @@ const CONFIG = {
       {
         type: "email",
         value: "ah.madadi@zohomail.com",
-        href: "mailto:ah.madadi@zohomail.com",
+        href: "mailto:ah.madadi@ut.ac.ir",
       },
       {
         type: "github",
