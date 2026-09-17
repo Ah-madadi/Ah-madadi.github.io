@@ -220,7 +220,7 @@ const CONFIG = {
       {
         "featured": true,
         "title": "High-Voltage Insulation & Electric Field Simulation",
-        "desc": "Analyzed 2D electric potential and field distribution in electrode/insulation geometries using FDM, Monte Carlo, and FEM. Studied traveling waves on 300Ω air lines (1500km/400km), damping behavior, and transient response. Combined MATLAB, COMSOL, and LTspice for multi-tool validation of insulation coordination.",
+        "desc": "Analyzed 2D electric potential and field distribution in electrode/insulation geometries using FDM, Monte Carlo, and FEM. Studied traveling waves on 300Ω air lines (1600km/400km), damping behavior, and transient response. Combined MATLAB, COMSOL, and LTspice for multi-tool validation of insulation coordination.",
         "tech": [
           "COMSOL",
           "FDM",
